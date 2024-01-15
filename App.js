@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {LogBox, YellowBox} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation';
@@ -6,6 +6,7 @@ import {getStore, getPersistor} from './src/redux';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {StyledText} from './src/components/atoms';
+import Toast from 'react-native-toast-message';
 
 const App = () => {
   const store = getStore();
@@ -22,16 +23,19 @@ const App = () => {
   };
 
   return (
-    <SafeAreaProvider>
-      <Provider store={store}>
-        <PersistGate
-          loading={<StyledText>Loading...</StyledText>}
-          persistor={persistor}
-          onBeforeLift={onBeforeLift}>
-          <AppNavigator />
-        </PersistGate>
-      </Provider>
-    </SafeAreaProvider>
+    <Fragment>
+      <SafeAreaProvider>
+        <Provider store={store}>
+          <PersistGate
+            loading={<StyledText>Loading...</StyledText>}
+            persistor={persistor}
+            onBeforeLift={onBeforeLift}>
+            <AppNavigator />
+          </PersistGate>
+        </Provider>
+      </SafeAreaProvider>
+      <Toast />
+    </Fragment>
   );
 };
 
