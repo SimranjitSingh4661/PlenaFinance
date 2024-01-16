@@ -35,3 +35,10 @@ export function generateRandomReviews() {
   const randomValue = Math.floor(Math.random() * 999) + 1;
   return randomValue;
 }
+
+export function calculateTotalAmount(products) {
+  return products.reduce((total, product) => {
+    const {price, count} = product;
+    return total + price * count;
+  }, 0);
+}

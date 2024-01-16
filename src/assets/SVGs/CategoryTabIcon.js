@@ -1,14 +1,15 @@
-import * as React from "react";
-import Svg, { Path } from "react-native-svg";
-const SVGComponent = (props) => (
+import * as React from 'react';
+import Svg, {Path} from 'react-native-svg';
+import {COLORS} from '../../constants';
+
+const SVGComponent = props => (
   <Svg
-    width={24}
-    height={24}
+    width={props?.W || 26}
+    height={props?.H || 26}
     viewBox="0 0 24 24"
-    fill="none"
+    fill={props?.active ? COLORS.YELLOW_DARK : 'none'}
     xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
+    {...props}>
     <Path
       clipRule="evenodd"
       d="M21 6.674a3.674 3.674 0 1 1-7.348-.001 3.674 3.674 0 0 1 7.348 0Z"

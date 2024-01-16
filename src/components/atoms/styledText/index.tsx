@@ -19,7 +19,7 @@ const StyledText: React.FC<StyleTextProps> = ({
   children,
   onLayout,
   variant = 'regular',
-  size = FONT_SIZE.MD,
+  size = FONT_SIZE.H2,
   color = COLORS.PRIMARY,
   lineHeight,
   textStyle,

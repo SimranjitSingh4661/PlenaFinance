@@ -1,14 +1,13 @@
 import {StyleSheet, Platform} from 'react-native';
-import {COLORS} from '../../../constants';
+import {COLORS, SCREEN_SPACING} from '../../../constants';
 
 export default StyleSheet.create({
   container: {
-    // borderRadius: 8,
-    // borderWidth: 1,
-    // overflow: 'hidden',
+    borderRadius: 50,
+    paddingVertical: 6,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 13,
+    paddingHorizontal: 24,
   },
   textInput: {
     flex: 1,
@@ -35,7 +34,7 @@ export default StyleSheet.create({
     fontSize: 13,
     lineHeight: 16,
     paddingTop: 11,
-    color: COLORS.textGray,
     textAlign: 'right',
+    color: COLORS.textGray,
   },
 });

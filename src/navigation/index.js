@@ -17,7 +17,7 @@ class AppNavigator extends React.Component {
     return (
       <NavigationContainer ref={ref => NavigationService.setNavigatorRef(ref)}>
         <Stack.Navigator screenOptions={config}>
-          <Stack.Screen name="Auth" component={BottomTabs} />
+          <Stack.Screen name="Tabs" component={BottomTabs} />
           <Stack.Screen name="Screen" component={ScreenStack} />
         </Stack.Navigator>
       </NavigationContainer>
